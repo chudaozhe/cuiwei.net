@@ -10,8 +10,12 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@nuxtjs/sitemap": "^5.1.4",
     "@nuxtjs/tailwindcss": "^6.12.0",
+    "he": "^1.2.0",
+    "markdown-it": "^14.1.0",
     "nuxt": "^3.11.2",
+    "rss": "^1.2.2",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
   }

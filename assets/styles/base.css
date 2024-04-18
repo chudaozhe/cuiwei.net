@@ -1,0 +1,39 @@
+body {
+    color: #404040;
+    background-color: #F6FCE2;
+    font-family: arial, "Microsoft YaHei", serif
+}
+
+body, nav, figure, h1, h2, h3, h4, ul, ol, dl, li {
+    margin: 0;
+    padding: 0
+}
+/*ul,ol 在文章中保持默认样式*/
+.markdown-body ul, .markdown-body ol{
+    list-style: initial;
+}
+
+.menu-nav li {
+    list-style: none
+}
+.ft p, .bd p{
+    margin: 0;
+    padding: 0
+}
+
+a {
+    color: #404040;
+    text-decoration: none
+}
+
+a:hover {
+    text-decoration: underline
+}
+
+a img {
+    border: 0
+}
+
+em {
+    color: #7958d1
+}
