@@ -5,7 +5,7 @@ export default defineEventHandler(async (event) => {
     try {
         const { public: { apiBase } } = useRuntimeConfig()
         const response = await fetch(
-            apiBase + '/api/rss'
+            apiBase + '/user/rss'
         );
         const {data} = await response.json();
         // create new rss feed this will be our channel tag with website title and url

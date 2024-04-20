@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: { enabled: true },
+  devtools: { enabled: false },
   css: ['~/assets/styles/base.css', '~/assets/styles/bootstrap-grid.min.css', '~/assets/styles/github-markdown.min.css'],
   modules: ["@nuxtjs/tailwindcss", "@nuxtjs/sitemap"],
   site: {
@@ -19,7 +19,7 @@ export default defineNuxtConfig({
     apiSecret: '123',
     // Keys within public are also exposed client-side
     public: {
-      apiBase: 'https://www.cuiwei.net'
+      apiBase: 'https://www.cuiwei.net/api',
     }
   }
 })
