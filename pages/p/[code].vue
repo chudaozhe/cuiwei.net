@@ -1,7 +1,7 @@
 <template>
   <!--main START-->
-  <div class="container single-post" style="padding: 0!important; margin-top: 20px">
-    <div class="row" style="margin: 0!important;">
+  <div class="container single-post">
+    <div class="row">
       <div class="col-lg-9 col-xs-12">
         <article class="post block">
           <header>
@@ -17,15 +17,13 @@
           </header>
           <!-- 内容 start -->
           <div class="bd markdown-body">
-<!--            <?php if (!empty($field['iframe'])){?>-->
-<!--            <iframe src="<?=$field['iframe'] ?>" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" id="bili-iframe"> </iframe>-->
-<!--            <?=$field['content']?>-->
+            <iframe v-if="field.iframe" :src="field.iframe" class="iframe" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" id="bili-iframe" />
             <div v-html="html"></div>
           </div>
-          <!-- 内容 start -->
+          <!-- 内容 end -->
           <footer>
             <p>广而告之，我的新作品《语音助手》上架Google Play了，欢迎下载体验</p>
-            <a href="//www.cuiwei.net/p/1753475452/"><img src="/images/voice.jpg" width="100%" height="100%"></a>
+            <a href="//www.cuiwei.net/p/1753475452"><img src="/images/voice.jpg" width="100%" height="100%"></a>
           </footer>
         </article>
       </div>
@@ -84,18 +82,22 @@ const formatDate = (time) => {
   let timestamp = new Date(parseInt(time + '000'))
   return formatdate(timestamp, 'yyyy-MM-dd hh:mm:ss') // 此处可根据自己的需要自定义想要的日期格式
 }
-// window.onload = function (){
-//   changeIframe()
-// }
-// window.onresize = function (){
-//   changeIframe()
-// }
-// function changeIframe(){
-//   let biliIframe=document.getElementById("bili-iframe");
-//   let width=biliIframe.offsetWidth;
-//   // console.log(width)
-//   biliIframe.height=width*(9/16)
-// }
+
+onMounted(()=>{
+  changeIframe()
+  window.addEventListener('resize', changeIframe)
+})
+onBeforeUnmount(()=>{
+  window.removeEventListener('resize', changeIframe)
+})
+const changeIframe = () => {
+  let biliIframe=document.getElementById("bili-iframe");
+  if (biliIframe) {
+    let width=biliIframe.offsetWidth;
+    // console.log(width)
+    biliIframe.height=width*(9/16)
+  }
+}
 
 </script>
 
@@ -130,59 +132,8 @@ const formatDate = (time) => {
   padding: 0 10px;
   margin: 15px 0 15px
 }
-.post .digest {
-  overflow: hidden;
-  line-height: 24px;
-  position: relative
-}
 
-.post .info {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  color: #999
-}
-
-.post .info a {
-  text-decoration: underline
-}
-
-.post .author {
-  position: absolute;
-  top: -24px;
-  left: 10px;
-  display: none;
-}
-
-.post .author figure {
-  border: 1px solid #cfebfd;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  width: 74px;
-  height: 92px;
-  background: #fff;
-  -moz-box-shadow: 2px 2px 4px #888;
-  -webkit-box-shadow: 2px 2px 4px #888;
-  box-shadow: 2px 2px 4px #888
-}
-
-.post .author figure img {
-  display: block;
-  margin: 2px
-}
-
-.post .author figcaption {
-  text-align: center;
-  background: #cfebfd;
-  line-height: 18px
-}
 /* detail */
-
-.single-post .post .info {
-  margin-top: 20px;
-  color: #999
-}
-
 .single-post header h1 {
   font-size: 2em;
   text-align: center;
@@ -211,10 +162,7 @@ const formatDate = (time) => {
 .single-post .entry-content p {
   margin-top: 20px
 }
-.entry-content .no-has-thumbnail {
-  width: 100%;
-  height: 100px
-}
+
 .single-post .post footer {
   border-top: 1px solid #ccc;
   padding: 0 10px 10px 10px;
@@ -242,46 +190,22 @@ const formatDate = (time) => {
   padding: 0 2px;
 }
 
+.iframe {
+  margin-bottom: 10px;
+}
 
 @media (min-width: 576px) {
   .container-sm, .container {
     max-width: 100%;
+    margin-top: 10px;
   }
 }
 @media (min-width: 768px) {
-  .container-md, .container-sm, .container {
-    max-width: 100%;
-  }
+
 }
 @media (min-width: 992px) {
-  .container-lg, .container-md, .container-sm, .container {
-    max-width: 100%;
-  }
-  .logo{
-    text-align: left;
-  }
-  .logo img{
-    width: 100px;
-    height: 100px;
-    border-radius: 25px;
-  }
-  #header .top {
-    padding-top: 50px;
-  }
-  #header .menu-nav {
-    margin-top: 34px;
-  }
-  #header .search {
-    margin-top: 30px;
-  }
   .post{
     margin-bottom: 60px;
-  }
-  .post .author {
-    display: block;
-  }
-  .post h1.entry-title{
-    text-indent: 90px;
   }
   .post h1{
     font-size: 30px;
@@ -290,72 +214,10 @@ const formatDate = (time) => {
 }
 @media (min-width: 1200px) {
   .container-xl, .container-lg, .container-md, .container-sm, .container {
-    max-width: 100%;
-  }
-  .logo{
-    text-align: left;
-  }
-  .logo img{
-    width: 100px;
-    height: 100px;
-    border-radius: 25px;
-  }
-  #header .top {
-    padding-top: 50px;
-  }
-  #header .menu-nav {
-    margin-top: 34px;
-  }
-  #header .search {
-    margin-top: 30px;
-  }
-  .post{
-    margin-bottom: 60px;
-  }
-  .post .author {
-    display: block;
-  }
-  .post h1.entry-title{
-    text-indent: 90px;
-  }
-  .post h1{
-    font-size: 30px;
-    padding-top: 30px;
+    max-width: 1320px;
   }
 }
 @media (min-width: 1400px) {
-  .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
-    max-width: 1320px;
-  }
-  .logo{
-    text-align: left;
-  }
-  .logo img{
-    width: 100px;
-    height: 100px;
-    border-radius: 25px;
-  }
-  #header .top {
-    padding-top: 50px;
-  }
-  #header .menu-nav {
-    margin-top: 34px;
-  }
-  #header .search {
-    margin-top: 30px;
-  }
-  .post{
-    margin-bottom: 60px;
-  }
-  .post .author {
-    display: block;
-  }
-  .post h1.entry-title{
-    text-indent: 90px;
-  }
-  .post h1{
-    font-size: 30px;
-    padding-top: 30px;
-  }
+
 }
 </style>

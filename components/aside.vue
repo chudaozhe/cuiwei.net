@@ -106,15 +106,4 @@ if (code) {
   color: #9158D1
 }
 
-.btn-tag{
-  border: none;
-  padding: 10px;
-  background: -moz-linear-gradient(top, #e8f5fe, #fff);
-  background: -webkit-gradient(linear, left top, left bottom, from(#e8f5fe), to(#fff));
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e8f5fe', endColorstr='#ffffff')
-}
-
-#sidebar{
-  margin-top: 25px;
-}
 </style>

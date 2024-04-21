@@ -1,12 +1,12 @@
 <template>
   <header id="header">
     <div class="top">
-      <div class="container" style="padding: 0!important;">
-        <div class="row" style="margin: 0!important;">
+      <div class="container">
+        <div class="row">
           <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 logo">
             <a href="/"><img src="/images/logo.jpg" width="44" height="44"></a>
           </div>
-          <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12" style="padding-left: 10px">
+          <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
             <section class="search">
               <form method="get" action="/search">
                 <div class="area"><input type="text" :value="keyword" name="keyword" /></div>
@@ -18,8 +18,8 @@
       </div>
     </div>
     <div class="menu">
-      <div class="container" style="padding: 0!important;">
-        <div class="row" style="margin: 0!important;">
+      <div class="container">
+        <div class="row">
           <nav class="menu-nav">
             <ul>
               <li v-for="(item, index) in navigation">
@@ -118,7 +118,7 @@ const navigation = ref([
 
 #header .menu-nav li {
   width: 20%;
-  font-size: 20px;
+  font-size: 16px;
   text-align: center;
   line-height: 72px;
 }
@@ -145,17 +145,15 @@ const navigation = ref([
 @media (min-width: 576px) {
   .container-sm, .container {
     max-width: 100%;
+    padding: 0;
   }
 }
 @media (min-width: 768px) {
-  .container-md, .container-sm, .container {
-    max-width: 100%;
+  #header .menu-nav li {
+    font-size: 20px;
   }
 }
 @media (min-width: 992px) {
-  .container-lg, .container-md, .container-sm, .container {
-    max-width: 100%;
-  }
   .logo{
     text-align: left;
   }
@@ -173,40 +171,10 @@ const navigation = ref([
 }
 @media (min-width: 1200px) {
   .container-xl, .container-lg, .container-md, .container-sm, .container {
-    max-width: 100%;
-  }
-  .logo{
-    text-align: left;
-  }
-  .logo img{
-    width: 100px;
-    height: 100px;
-    border-radius: 25px;
-  }
-  #header .top {
-    padding-top: 50px;
-  }
-  #header .search {
-    margin-top: 30px;
+    max-width: 1320px;
   }
 }
 @media (min-width: 1400px) {
-  .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
-    max-width: 1320px;
-  }
-  .logo{
-    text-align: left;
-  }
-  .logo img{
-    width: 100px;
-    height: 100px;
-    border-radius: 25px;
-  }
-  #header .top {
-    padding-top: 50px;
-  }
-  #header .search {
-    margin-top: 30px;
-  }
+
 }
 </style>

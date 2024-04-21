@@ -1,7 +1,7 @@
 <template>
   <!--main START-->
-  <div class="container" style="padding: 0!important; margin-top: 20px">
-    <div class="row" style="margin: 0!important;">
+  <div class="container">
+    <div class="row">
       <div class="col-md-9 col-xs-12">
         <article-item
           v-for="(field, index) in articleList?.list"
@@ -56,26 +56,24 @@ onMounted(()=>{
 @media (min-width: 576px) {
   .container-sm, .container {
     max-width: 100%;
+    margin-top: 10px;
   }
 }
 @media (min-width: 768px) {
-  .container-md, .container-sm, .container {
-    max-width: 100%;
-  }
+
 }
 @media (min-width: 992px) {
   .container-lg, .container-md, .container-sm, .container {
-    max-width: 100%;
+    /* 大于992px 文章列表才显示作者头像 */
+    margin-top: 20px;
   }
 }
 @media (min-width: 1200px) {
   .container-xl, .container-lg, .container-md, .container-sm, .container {
-    max-width: 100%;
+    max-width: 1320px;
   }
 }
 @media (min-width: 1400px) {
-  .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
-    max-width: 1320px;
-  }
+
 }
 </style>

@@ -9,7 +9,7 @@
       </div>
     </div>
     <footer>
-      <div class="author ">
+      <div class="author">
         <figure>
           <img alt='' src='/images/logo.jpg' class='avatar' height='70' width='70' />
           <figcaption><b><a href="#">cw</a></b></figcaption>
@@ -109,7 +109,7 @@ const props = defineProps(['field'])
 
 @media (min-width: 992px) {
   .post{
-    margin-bottom: 60px;
+    margin-bottom: 40px;
   }
   .post .author {
     display: block;
@@ -123,33 +123,9 @@ const props = defineProps(['field'])
   }
 }
 @media (min-width: 1200px) {
-  .post{
-    margin-bottom: 60px;
-  }
-  .post .author {
-    display: block;
-  }
-  .post h2.entry-title{
-    text-indent: 90px;
-  }
-  .post h2{
-    font-size: 30px;
-    padding-top: 30px;
-  }
+
 }
 @media (min-width: 1400px) {
-  .post{
-    margin-bottom: 60px;
-  }
-  .post .author {
-    display: block;
-  }
-  .post h2.entry-title{
-    text-indent: 90px;
-  }
-  .post h2{
-    font-size: 30px;
-    padding-top: 30px;
-  }
+
 }
 </style>

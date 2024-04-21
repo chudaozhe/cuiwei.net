@@ -1,14 +1,8 @@
 <template>
   <!--main START-->
+  <pointer>{{keyword}}</pointer>
   <div class="container">
-    <div class="row" style="margin: 0!important;">
-      <div class="block" style="margin-top: 20px; padding: 0; height: 30px; line-height:30px; text-indent: 1em">
-        <h1 class="sidebar-h1" style="padding: 0;">{{keyword}}</h1>
-      </div>
-    </div>
-  </div>
-  <div class="container" style="padding: 0!important; margin-top: 20px">
-    <div class="row" style="margin: 0!important;">
+    <div class="row">
       <div class="col-md-9 col-xs-12">
         <article-item
           v-for="(field, index) in articleList?.list"
@@ -68,46 +62,26 @@ useSeoMeta({
 })
 </script>
 <style scoped>
-.block {
-  border: solid 1px #bbbeaf;
-  -moz-box-shadow: 0 0 4px #888;
-  -webkit-box-shadow: 0 0 4px #888;
-  box-shadow: 0 0 4px #888;
-  background: #fff
-}
-.sidebar-h1 {
-  padding: 10px 10px 0;
-  vertical-align: middle;
-  color: #7958D1;
-  font-size: 1.3em;
-  position: relative;
-  background: -moz-linear-gradient(top, #e8f5fe, #fff);
-  background: -webkit-gradient(linear, left top, left bottom, from(#e8f5fe), to(#fff));
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e8f5fe', endColorstr='#ffffff')
-}
 @media (min-width: 576px) {
   .container-sm, .container {
     max-width: 100%;
+    margin-top: 10px;
   }
 }
 @media (min-width: 768px) {
-  .container-md, .container-sm, .container {
-    max-width: 100%;
-  }
+
 }
 @media (min-width: 992px) {
   .container-lg, .container-md, .container-sm, .container {
-    max-width: 100%;
+    margin-top: 20px;
   }
 }
 @media (min-width: 1200px) {
   .container-xl, .container-lg, .container-md, .container-sm, .container {
-    max-width: 100%;
+    max-width: 1320px;
   }
 }
 @media (min-width: 1400px) {
-  .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
-    max-width: 1320px;
-  }
+
 }
 </style>
