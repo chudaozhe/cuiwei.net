@@ -1,22 +1,22 @@
 <template>
   <article class="post block">
-    <h2 class="entry-title">
-      <a class="title" :href="'/p/' +field.code" :title="field.title">{{field.title}}</a>
-    </h2>
-    <div class="bd entry-content">
-      <div class="digest no-has-thumbnail">
-        <p>{{field.description}}</p>
-      </div>
-    </div>
-    <footer>
+    <header>
       <div class="author">
         <figure>
-          <img alt='' src='/images/logo.jpg' class='avatar' height='70' width='70' />
+          <img alt='' src='/images/logo.jpg' class='avatar' height='49' width='49' />
           <figcaption><b><a href="#">cw</a></b></figcaption>
         </figure>
       </div>
-      <p class="info"><a :href="'/category/' + field.category_id">{{field.category_name}}</a></p>
-    </footer>
+      <h2>
+        <a class="title" :href="'/p/' +field.code" :title="field.title">{{field.title}}</a>
+      </h2>
+      <p class="category"><a :href="'/category/' + field.category_id">{{field.category_name}}</a></p>
+    </header>
+    <div class="bd entry-content">
+      <div class="description">
+        {{field.description}}
+      </div>
+    </div>
   </article>
 </template>
 
@@ -34,23 +34,32 @@ const props = defineProps(['field'])
   box-shadow: 0 0 4px #888;
   background: #fff
 }
-.entry-content .no-has-thumbnail {
-  width: 100%;
-  height: 100px
-}
+
 /* article-item */
 .post {
   position: relative;
   margin: 15px auto 30px
 }
 
-.post h2 {
+.post header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   background: -moz-linear-gradient(top, #e8f5fe, #fff);
   background: -webkit-gradient(linear, left top, left bottom, from(#e8f5fe), to(#fff));
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e8f5fe', endColorstr='#ffffff');
   padding: 10px 10px 0 10px;
+}
+
+.post h2 {
   font-size: 20px;
+  /* 设置行高与强制单行 */
+  line-height: 1.0; /* 根据设计调整行高 */
+  white-space: nowrap;
+
+  /* 启用文本溢出隐藏并显示省略号 */
   overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .post h2 a:hover {
@@ -60,20 +69,17 @@ const props = defineProps(['field'])
   padding: 0 10px;
   margin: 15px 0 15px
 }
-.post .digest {
+.post .description {
   overflow: hidden;
-  line-height: 24px;
-  position: relative
+  text-align: justify;
 }
 
-.post .info {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  color: #999
+.post .category {
+  color: #999;
+  padding-left: 10px;
 }
 
-.post .info a {
+.post .category a {
   text-decoration: underline
 }
 
@@ -88,8 +94,8 @@ const props = defineProps(['field'])
   border: 1px solid #cfebfd;
   -moz-border-radius: 3px;
   border-radius: 3px;
-  width: 74px;
-  height: 92px;
+  width: 54px;
+  height: 72px;
   background: #fff;
   -moz-box-shadow: 2px 2px 4px #888;
   -webkit-box-shadow: 2px 2px 4px #888;
@@ -114,12 +120,12 @@ const props = defineProps(['field'])
   .post .author {
     display: block;
   }
-  .post h2.entry-title{
-    text-indent: 90px;
+  .post h2{
+    text-indent: 70px;
   }
   .post h2{
-    font-size: 30px;
-    padding-top: 30px;
+    font-size: 25px;
+    padding-top: 10px;
   }
 }
 @media (min-width: 1200px) {

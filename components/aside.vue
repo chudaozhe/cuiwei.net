@@ -79,7 +79,7 @@ if (code) {
 }
 
 .tag-cloud {
-  margin: 10px
+  padding: 0 5px
 }
 
 .tag-cloud li {

@@ -7,7 +7,7 @@
         <a href="/rss"><img src="/images/rss-icon.png" alt=""> RSS</a> | <a href="/sitemap.xml">站点地图</a>
       </p>
       <p class="copyright">
-        写代码的崔哥 | <a href="https://beian.miit.gov.cn/">京ICP备18039637号-1</a>
+        写代码的崔哥 | <a href="https://beian.miit.gov.cn/" target="_blank">京ICP备18039637号-1</a> | <a href="https://github.com/chudaozhe/cuiwei.net" target="_blank">Github</a>
       </p>
     </div>
   </footer>

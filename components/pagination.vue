@@ -1,22 +1,14 @@
 <template>
   <div class="pagination" v-if="totalPages() > 1">
-    <ul>
-      <li v-if="currentPage > 1">
-        <NuxtLink external :to="{ path: route.path, query: { ...route.query, page: currentPage -1 } }">
-          上一页
-        </NuxtLink>
-      </li>
+    <NuxtLink external :to="{ path: route.path, query: { ...route.query, page: currentPage -1 } }" v-if="currentPage > 1">
+      上一页
+    </NuxtLink>
 
-      <li v-for="(page, index) in displayedPages()" :key="page" :class="{ current: page === currentPage }">
-        <NuxtLink external :to="{ path: route.path, query: { ...route.query, page: page } }">
-          {{ page }}
-        </NuxtLink>
-      </li>
+    <NuxtLink external :to="{ path: route.path, query: { ...route.query, page: page } }" v-for="(page, index) in displayedPages()" :key="page" :class="{ current: page === currentPage }">
+      {{ page }}
+    </NuxtLink>
 
-      <li v-if="currentPage < totalPages()">
-        <NuxtLink external :to="{ path: route.path, query: { ...route.query, page: currentPage + 1 } }">下一页</NuxtLink>
-      </li>
-    </ul>
+    <NuxtLink external :to="{ path: route.path, query: { ...route.query, page: currentPage + 1 } }" v-if="currentPage < totalPages()">下一页</NuxtLink>
   </div>
 </template>
 
@@ -47,41 +39,24 @@ const displayedPages = () => {
 <style scoped>
 .pagination {
   margin: 20px 0;
-  overflow: hidden;
   text-align: center;
 }
-.pagination ul li {
-  display:inline-block;
-  border: 1px solid #ccc;
-  padding: 2px 9px;
+.pagination a {
+  padding: 4px 10px;
   margin: 0 3px;
+  background: #fff;
+  color: #999;
   line-height: 20px;
-  background: #fff;color:#999
+  border: 1px solid #ccc;
 }
-.pagination ul li:hover{
-  background:#7958d1;
-  color:#fff;
-  border: 1px solid #7958d1;
-}
-.pagination ul li:hover a{
-  color:#fff;
-}
-.pagination ul li.current {
-  display: inline-block;
-  border: 1px solid #7958d1;
-  padding: 2px 9px;
-  margin: 0 3px;
+.pagination a:hover {
   background: #7958d1;
   color: #fff;
+  border: 1px solid #7958d1;
 }
-.pagination ul li.current a {
-  color: #fff;
-}
-.pagination ul li a{
-  display:block;
-  color:#999
-}
-.pagination ul li a:hover {
+
+.pagination a.current {
+  background:#7958d1;
   color: #fff;
 }
 </style>

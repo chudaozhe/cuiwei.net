@@ -145,7 +145,7 @@ const navigation = ref([
 @media (min-width: 576px) {
   .container-sm, .container {
     max-width: 100%;
-    padding: 0;
+    padding: 0 12px;
   }
 }
 @media (min-width: 768px) {

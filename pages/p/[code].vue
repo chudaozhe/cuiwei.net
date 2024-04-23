@@ -1,5 +1,4 @@
 <template>
-  <!--main START-->
   <div class="container single-post">
     <div class="row">
       <div class="col-lg-9 col-xs-12">
@@ -32,7 +31,6 @@
       </div>
     </div>
   </div>
-  <!--main END-->
 </template>
 <script setup>
 import Aside from '../components/aside.vue'
@@ -112,8 +110,7 @@ const changeIframe = () => {
 }
 
 .post {
-  position: relative;
-  margin: 15px auto 30px
+  margin: 15px auto 10px
 }
 
 .post h1 {
@@ -204,8 +201,8 @@ const changeIframe = () => {
 
 }
 @media (min-width: 992px) {
-  .post{
-    margin-bottom: 60px;
+  .post {
+    margin: 15px auto 30px
   }
   .post h1{
     font-size: 30px;

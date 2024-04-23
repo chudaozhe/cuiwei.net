@@ -1,8 +1,7 @@
 <template>
-  <!--main START-->
   <div class="container">
     <div class="row">
-      <div class="col-md-9 col-xs-12">
+      <div class="col-md-9 col-xs-12 custom-col-l">
         <article-item
           v-for="(field, index) in articleList?.list"
           :field="field"
@@ -10,12 +9,11 @@
         />
         <Pagination :total="articleList?.count??0" :max="max" />
       </div>
-      <div class="col-md-3 col-xs-12">
+      <div class="col-md-3 col-xs-12 custom-col-r">
         <Aside />
       </div>
     </div>
   </div>
-  <!--main END-->
 </template>
 
 <script setup>
@@ -29,7 +27,6 @@ const route = useRoute()
 const articleList = ref();
 const page = ref(route.query.page??1)
 const max = ref(route.query.max??10)
-// const { data } = await useApiFetch('http://blog.cw.net/admin/1/category/1/article')
 const md = new MarkdownIt({
   html: true,
   linkify: true,
@@ -60,7 +57,12 @@ onMounted(()=>{
   }
 }
 @media (min-width: 768px) {
-
+  .custom-col-l {
+    padding-right: 6px;
+  }
+  .custom-col-r {
+    padding-left: 6px;
+  }
 }
 @media (min-width: 992px) {
   .container-lg, .container-md, .container-sm, .container {
