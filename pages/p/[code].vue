@@ -1,7 +1,7 @@
 <template>
   <div class="container single-post">
     <div class="row">
-      <div class="col-lg-9 col-xs-12">
+      <div class="col-lg-9 col-xs-12 custom-col-l">
         <article class="post block">
           <header>
             <h1>{{field.title}}</h1>
@@ -26,7 +26,7 @@
           </footer>
         </article>
       </div>
-      <div class="col-lg-3 col-xs-12">
+      <div class="col-lg-3 col-xs-12 custom-col-r">
         <Aside/>
       </div>
     </div>
@@ -198,7 +198,12 @@ const changeIframe = () => {
   }
 }
 @media (min-width: 768px) {
-
+  .custom-col-l {
+    padding-right: 6px;
+  }
+  .custom-col-r {
+    padding-left: 6px;
+  }
 }
 @media (min-width: 992px) {
   .post {

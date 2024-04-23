@@ -1,6 +1,13 @@
-# Nuxt 3 Minimal Starter
+# 基于 Nuxt3 的响应式 Blog
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+## 截屏
+![pc.home.png](screenshots/pc.home.png)
+
+![pc.detail.png](screenshots/pc.detail.png)
+
+![mobile.home.png](screenshots/mobile.home.png)
+
+![mobile.detail.png](screenshots/mobile.detail.png)
 
 ## Setup
 
