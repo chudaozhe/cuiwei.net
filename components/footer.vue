@@ -3,7 +3,7 @@
     <div class="hd"></div>
 
     <div class="ft">
-      <p class="copyright copyright1">
+      <p class="copyright pt-0">
         <a href="/rss"><img src="/images/rss-icon.png" alt=""> RSS</a> | <a href="/sitemap.xml">站点地图</a>
       </p>
       <p class="copyright">
@@ -34,14 +34,11 @@
   padding-top: 6px;
   color: #fff;
 }
-#footer .ft .copyright1 {
-  padding-top: 0;
-}
+
 #footer .ft .copyright a {
   color: #fff
 }
 #footer .ft .copyright img {
   display: inline-block;
-  vertical-align: middle;
 }
 </style>

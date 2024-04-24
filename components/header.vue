@@ -60,7 +60,6 @@ const navigation = ref([
   position: relative;
   padding: 4px;
   margin: 18px auto 0;
-  vertical-align: baseline;
   border-radius: 4px;
   background: #7967A8;
   max-width: 600px;
@@ -68,8 +67,6 @@ const navigation = ref([
 
 #header .search .area {
   background: #fff;
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
   border-radius: 2px;
   height: 30px;
   margin-right:82px;

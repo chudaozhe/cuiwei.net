@@ -29,8 +29,6 @@ const props = defineProps(['field'])
 .block {
   margin: 15px auto;
   border: solid 1px #bbbeaf;
-  -moz-box-shadow: 0 0 4px #888;
-  -webkit-box-shadow: 0 0 4px #888;
   box-shadow: 0 0 4px #888;
   background: #fff
 }
@@ -45,9 +43,7 @@ const props = defineProps(['field'])
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: -moz-linear-gradient(top, #e8f5fe, #fff);
-  background: -webkit-gradient(linear, left top, left bottom, from(#e8f5fe), to(#fff));
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e8f5fe', endColorstr='#ffffff');
+  background-image: linear-gradient(to bottom, #e8f5fe, #fff);
   padding: 10px 10px 0 10px;
 }
 
@@ -92,13 +88,10 @@ const props = defineProps(['field'])
 
 .post .author figure {
   border: 1px solid #cfebfd;
-  -moz-border-radius: 3px;
   border-radius: 3px;
   width: 54px;
   height: 72px;
   background: #fff;
-  -moz-box-shadow: 2px 2px 4px #888;
-  -webkit-box-shadow: 2px 2px 4px #888;
   box-shadow: 2px 2px 4px #888
 }
 
