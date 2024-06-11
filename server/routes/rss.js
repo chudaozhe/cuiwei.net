@@ -4,8 +4,13 @@ export default defineEventHandler(async (event) => {
     // wrap everything in a try catch block
     try {
         const { public: { apiBase } } = useRuntimeConfig()
+        const requestOptions = {
+            method: 'POST',
+        };
+
         const response = await fetch(
-            apiBase + '/user/rss'
+            apiBase + '/user/rss',
+            requestOptions
         );
         const {data} = await response.json();
         // create new rss feed this will be our channel tag with website title and url
@@ -27,7 +32,8 @@ export default defineEventHandler(async (event) => {
             feed.item({
                 title: post.title,
                 link: post.link,
-                description: post.description,
+                //确保在记录或输出日志时不混入控制台颜色或其他ANSI转义码到XML数据中。
+                description: post.description.replace(/[\u001B\u009B][[\]()#;?]*(?:(?:(?:[a-zA-Z\d]*(?:;[-a-zA-Z\d\/#&.:=?%@~_]*)*)?\u0007)|(?:(?:\d{1,4}(?:;\d{0,4})*)?[0-9A-PRZcf-nqry=><~]))/g, ''),
                 pubDate: post.pubDate,
                 guid: post.id,
             });

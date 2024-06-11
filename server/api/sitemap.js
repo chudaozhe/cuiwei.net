@@ -2,7 +2,7 @@ export default defineSitemapEventHandler(async () => {
     // fetch data directly in the correct type
     const { public: { apiBase } } = useRuntimeConfig()
     const response = await fetch(
-        apiBase + '/user/sitemap'
+        apiBase + '/user/sitemaps'
     );
     const {data} = await response.json();
     return [

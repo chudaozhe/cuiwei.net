@@ -40,7 +40,7 @@ const buildDescription = ((val) => {
   desc = he.decode(desc).replace(/<\/?.+?>/g, '');
   return desc.length > 300 ? desc.substring(0, 300) + '...' : desc;
 })
-articleList.value = await getArticleList({keyword: keyword.value, page: page.value, max:max.value})
+articleList.value = await getArticleList({keyword: keyword.value, page: page.value, per_page:max.value})
 articleList.value.list.forEach((obj) => {
   obj.description = obj.description === '' ? obj.content : '';
   obj.description = buildDescription(obj.description)

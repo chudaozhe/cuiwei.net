@@ -6,11 +6,11 @@
           <header>
             <h1>{{field.title}}</h1>
             <div>
-              <span v-if="field.update_time">
-                编辑于 {{formatDate(field.update_time)}}
-                <a class="iconfont" :title="'发布于 ' + formatDate(field.create_time)">&#xe689;</a>
+              <span v-if="field.updated_at">
+                编辑于 {{field.updated_at}}
+                <a class="iconfont" :title="'发布于 ' + field.created_at">&#xe689;</a>
               </span>
-              <span v-else>发布于 {{formatDate(field.create_time)}}</span>
+              <span v-else>发布于 {{field.created_at}}</span>
               <span>阅读 {{field.views}}</span>
             </div>
           </header>
@@ -75,6 +75,11 @@ const html = computed(() => {
   return md.render(field.value.content)
 })
 
+/**
+ * 作废
+ * @param time
+ * @returns {*|string}
+ */
 const formatDate = (time) => {
   if (time.length === 0) return ''
   let timestamp = new Date(parseInt(time + '000'))
