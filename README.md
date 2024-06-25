@@ -9,6 +9,12 @@
 
 ![mobile.detail.png](screenshots/mobile.detail.png)
 
+启动服务端
+```
+npm install pm2 -g
+
+pm2 start ecosystem.config.cjs
+```
 ## Setup
 
 Make sure to install the dependencies:

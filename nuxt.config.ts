@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   modules: ["@nuxtjs/tailwindcss", "@nuxtjs/sitemap"],
   site: {
     // url: 'https://www.cuiwei.net',
-    url: 'http://newblog.cw.net',
+    url: 'https://beta.cuiwei.net',
   },
   sitemap: {
     // https://nuxtseo.com/sitemap/guides/customising-ui
@@ -21,7 +21,7 @@ export default defineNuxtConfig({
     // Keys within public are also exposed client-side
     public: {
       // apiBase: 'https://www.cuiwei.net/api',
-      apiBase: 'http://newblog.cw.net/api',
+      apiBase: 'https://beta.cuiwei.net/api',
     }
   }
 })
