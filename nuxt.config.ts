@@ -4,8 +4,8 @@ export default defineNuxtConfig({
   css: ['~/assets/styles/base.css', '~/assets/styles/bootstrap-grid.min.css', '~/assets/styles/github-markdown.min.css'],
   modules: ["@nuxtjs/tailwindcss", "@nuxtjs/sitemap"],
   site: {
-    // url: 'https://www.cuiwei.net',
-    url: 'https://beta.cuiwei.net',
+    url: 'https://www.cuiwei.net',
+    // url: 'https://beta.cuiwei.net',
   },
   sitemap: {
     // https://nuxtseo.com/sitemap/guides/customising-ui
@@ -20,8 +20,8 @@ export default defineNuxtConfig({
     apiSecret: '123',
     // Keys within public are also exposed client-side
     public: {
-      // apiBase: 'https://www.cuiwei.net/api',
-      apiBase: 'https://beta.cuiwei.net/api',
+      apiBase: 'https://www.cuiwei.net/api',
+      // apiBase: 'https://beta.cuiwei.net/api',
     }
   }
 })

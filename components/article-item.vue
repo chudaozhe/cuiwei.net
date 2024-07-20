@@ -49,10 +49,7 @@ const props = defineProps(['field'])
 
 .post h2 {
   font-size: 20px;
-  /* 设置行高与强制单行 */
-  line-height: 1.0; /* 根据设计调整行高 */
   white-space: nowrap;
-
   /* 启用文本溢出隐藏并显示省略号 */
   overflow: hidden;
   text-overflow: ellipsis;
@@ -118,7 +115,6 @@ const props = defineProps(['field'])
   }
   .post h2{
     font-size: 25px;
-    padding-top: 10px;
   }
 }
 @media (min-width: 1200px) {
