@@ -1,5 +1,15 @@
 # 基于 Nuxt3 的响应式 Blog
 
+
+### 流行的静态网站托管平台
+
+- [GitHub Pages](https://pages.github.com/) 
+- [Vercel](https://www.vercel.com/) -> https://cuiwei-net.vercel.app
+- [Netlify](https://www.netlify.com/) -> https://cuiwei-net.netlify.app
+- [Render](https://www.render.com/)
+- [Railway](https://railway.app/)
+- [Heroku](https://www.heroku.com/)
+
 ## 截屏
 ![pc.home.png](screenshots/pc.home.png)
 
