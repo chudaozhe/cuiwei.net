@@ -1,0 +1,15 @@
+language: nodejs
+services:
+  - docker
+
+before_install:
+  - docker info
+  - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
+
+script:
+  - docker build -t chudaozhe/cuiwei.net:latest .
+  - docker tag chudaozhe/cuiwei.net:latest chudaozhe/cuiwei.net:$TRAVIS_COMMIT
+
+after_success:
+  - docker push chudaozhe/cuiwei.net:latest
+  - docker push chudaozhe/cuiwei.net:$TRAVIS_COMMIT

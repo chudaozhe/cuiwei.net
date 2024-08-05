@@ -10,5 +10,5 @@ COPY --from=builder /app/ecosystem.config.cjs .
 RUN yarn global add pm2
 
 EXPOSE 3000
-ENTRYPOINT ["pm2", "start", "ecosystem.config.cjs"]
+ENTRYPOINT ["pm2", "start", "ecosystem.config.cjs", "--no-daemon"]
 #docker build -t chudaozhe/cuiwei.net:1.0-release .
